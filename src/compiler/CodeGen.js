@@ -36,12 +36,13 @@ export class CodeGen {
       case 'Identifier':
         this.emit('LOAD', node.name, `load ${node.name}`);
         break;
-      case 'BinOp':
+      case 'BinOp': {
         this.generate(node.children[0]);
         this.generate(node.children[1]);
         const opMap = {'+':'ADD','-':'SUB','*':'MUL','/':'DIV','//':'IDIV','%':'MOD','**':'POW','<':'LT','>':'GT','==':'EQ','!=':'NEQ','<=':'LEQ','>=':'GEQ'};
         this.emit(opMap[node.op] || 'OP', node.op, `${node.op} operation`);
         break;
+      }
       case 'UnaryOp':
         this.generate(node.children[0]);
         this.emit('NEG', '', 'negate');

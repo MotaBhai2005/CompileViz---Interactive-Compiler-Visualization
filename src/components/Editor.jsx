@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import { EXAMPLES } from '../utils/constants'
 
 export default function Editor({ sourceCode, setSourceCode, onLoadExample }) {
   const [lineCount, setLineCount] = useState(1)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const lines = sourceCode.split('\n').length
     setLineCount(lines)
   }, [sourceCode])

@@ -140,7 +140,7 @@ function AssemblyPanel({ instructions }) {
   )
 }
 
-export default function OutputPanels({ tokens, ast, instructions, error, activePhase }) {
+export default function OutputPanels({ tokens, ast, instructions, error }) {
   return (
     <div className="output-panel">
       <div className="pipeline">
