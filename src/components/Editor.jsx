@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { EXAMPLES } from '../utils/constants'
 
 export default function Editor({ sourceCode, setSourceCode, onLoadExample }) {
