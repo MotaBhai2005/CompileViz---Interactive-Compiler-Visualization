@@ -1,13 +1,8 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState } from 'react'
 import { EXAMPLES } from '../utils/constants'
 
 export default function Editor({ sourceCode, setSourceCode, onLoadExample }) {
-  const [lineCount, setLineCount] = useState(1)
-
-  useLayoutEffect(() => {
-    const lines = sourceCode.split('\n').length
-    setLineCount(lines)
-  }, [sourceCode])
+  const lineCount = sourceCode.split('\n').length
 
   const handleScroll = (e) => {
     const lineNumsEl = e.currentTarget.parentElement.querySelector('.line-nums')
